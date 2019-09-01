@@ -1,0 +1,13 @@
+body {
+    background: black;
+    padding: 0px;
+    margin: 0px;
+}
+
+div#player {
+    width: 80vw;
+    height: 60vh;
+    background: black;
+    margin: 20vh auto 0px auto;
+    display: block;
+}
