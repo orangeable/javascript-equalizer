@@ -23,18 +23,20 @@ window.addEventListener(
         document.getElementById("audio").appendChild(audio);
 
         document.getElementById("audio_player").onplay = function() {
-            context = new AudioContext();
-            analyser = context.createAnalyser();
-            canvas = document.getElementById("canvas");
-            ctx = canvas.getContext("2d");
-            source = context.createMediaElementSource(audio);
+            if (typeof(context) === "undefined") {
+                context = new AudioContext();
+                analyser = context.createAnalyser();
+                canvas = document.getElementById("canvas");
+                ctx = canvas.getContext("2d");
+                source = context.createMediaElementSource(audio);
 
-            canvas.width = window.innerWidth * 0.80;
-            canvas.height = window.innerHeight * 0.60;
+                canvas.width = window.innerWidth * 0.80;
+                canvas.height = window.innerHeight * 0.60;
 
-            source.connect(analyser);
-            analyser.connect(context.destination);
-
+                source.connect(analyser);
+                analyser.connect(context.destination);
+            }
+            
             FrameLooper();
         };
     },
