@@ -21,7 +21,10 @@ window.addEventListener(
     "load",
     function() {
         document.getElementById("audio").appendChild(audio);
-
+        var fileSelector = document.getElementById("selector");
+        fileSelector.addEventListener('change', (event) => {
+        audio.src = URL.createObjectURL(fileSelector.files[0]);
+        });
         document.getElementById("audio_player").onplay = function() {
             if (typeof(context) === "undefined") {
                 context = new AudioContext();

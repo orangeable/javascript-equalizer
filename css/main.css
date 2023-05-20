@@ -1,5 +1,6 @@
 body {
     background: black;
+    color: lightgray;
     padding: 0px;
     margin: 0px;
 }
@@ -10,4 +11,11 @@ div#player {
     background: black;
     margin: 20vh auto 0px auto;
     display: block;
+}
+
+input {
+    padding: 10px 10px 10px 0px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
 }
